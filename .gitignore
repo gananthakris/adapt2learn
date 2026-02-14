@@ -4,3 +4,4 @@ node_modules
 amplify_outputs.json
 .DS_Store
 coverage
+.vercel
