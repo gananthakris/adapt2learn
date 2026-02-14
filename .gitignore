@@ -1,0 +1,6 @@
+.next
+node_modules
+.env.local
+amplify_outputs.json
+.DS_Store
+coverage

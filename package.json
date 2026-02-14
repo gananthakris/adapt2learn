@@ -1,0 +1,38 @@
+{
+  "name": "adapt2learn",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "seed": "node scripts/seed.mjs",
+    "test:e2e": "node scripts/e2e-smoke.mjs",
+    "qa": "npm run type-check && npm run lint && npm run build && npm run test:e2e"
+  },
+  "dependencies": {
+    "@aws-amplify/backend": "^1.7.0",
+    "@aws-amplify/backend-cli": "^1.2.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.760.0",
+    "@xyflow/react": "^12.4.0",
+    "aws-amplify": "^6.9.0",
+    "next": "^14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "^2.15.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.35",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  }
+}
