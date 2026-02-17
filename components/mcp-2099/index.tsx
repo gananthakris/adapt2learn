@@ -3,34 +3,34 @@
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 
 /* ─────────────────────────────────────────────
-   MCP-2099 — Hyper-Futuristic Master Control Program
-   Self-contained showcase component.
+   ADAPT-2099 — Mastery Control Protocol
+   Adapt2Learn's AI learning engine visualised.
    Zero external animation deps — pure CSS keyframes.
 ───────────────────────────────────────────── */
 
 const PANELS = [
   {
-    label: "Neural Sync",
-    value: "98.7%",
-    sub: "Core stability index",
-    fill: 98,
+    label: "Mastery Index",
+    value: "73.4%",
+    sub: "Avg learner mastery across all skills",
+    fill: 73,
     shimmerDelay: "0s",
     dotDelay: "0s",
     accent: "var(--mcp-cyan)",
   },
   {
-    label: "Data Flux",
-    value: "2.4 TB/s",
-    sub: "Processing throughput",
-    fill: 72,
+    label: "Active Learners",
+    value: "24",
+    sub: "Connected to BKT engine now",
+    fill: 60,
     shimmerDelay: "1.4s",
     dotDelay: "0.5s",
     accent: "var(--mcp-magenta)",
   },
   {
-    label: "Grid Nodes",
-    value: "4,096",
-    sub: "Active processors online",
+    label: "Knowledge Nodes",
+    value: "8 skills",
+    sub: "Skill graph nodes being traced",
     fill: 85,
     shimmerDelay: "2.8s",
     dotDelay: "1s",
@@ -39,8 +39,8 @@ const PANELS = [
 ];
 
 const STREAM_CHARS = [
-  "01", "10", "FF", "MCP", "∆∇", "Ω",
-  "λ", "⬡", "◈", "↑↓", "A7", "E9", "F4", "2B",
+  "BKT", "pK", "pT", "JSX", "∆p", "↑",
+  "Hook", "◈", "Skill", "Quiz", "AI", "Mastery", "Learn", "0.92",
 ];
 
 const CIRCUIT_NODES: [number, number][] = [
@@ -123,6 +123,18 @@ export default function MCP2099() {
           {CIRCUIT_NODES.map(([cx, cy], i) => (
             <circle key={i} cx={cx} cy={cy} r="3.5" fill="var(--mcp-cyan)" opacity="0.7" />
           ))}
+          {/* Skill labels at circuit endpoints */}
+          {([
+            [500, 138, "JSX"],
+            [600, 138, "Hooks"],
+            [500, 638, "Props"],
+            [700, 638, "State"],
+          ] as [number, number, string][]).map(([x, y, label]) => (
+            <text key={label} x={x} y={y} fill="rgba(0,255,245,0.5)"
+              fontSize="11" fontFamily="'Share Tech Mono', monospace" textAnchor="middle">
+              {label}
+            </text>
+          ))}
         </svg>
 
         {/* ── Floating data streams ── */}
@@ -174,12 +186,12 @@ export default function MCP2099() {
           <div className="mcp-title-wrap">
             <h1
               className={`mcp-title${glitchActive ? " mcp-title--glitch" : ""}`}
-              aria-label="MCP-2099"
+              aria-label="ADAPT-2099"
             >
-              MCP-2099
+              ADAPT·2099
             </h1>
             <p className="mcp-subtitle">
-              Master Control Program · Hyper-Futuristic Interface
+              Mastery Control Protocol · Bayesian Knowledge Engine
             </p>
           </div>
 
@@ -223,16 +235,16 @@ export default function MCP2099() {
         <footer className="mcp-status" aria-label="System status">
           <div className="mcp-status__item">
             <span className="mcp-status__led" />
-            SYSTEM ONLINE
+            BKT ENGINE ACTIVE
           </div>
-          <div className="mcp-status__item">EPOCH: 2099.031</div>
-          <div className="mcp-status__item">SECTOR: 7G-ALPHA</div>
-          <div className="mcp-status__item">QUANTUM LINK: STABLE</div>
+          <div className="mcp-status__item">24 LEARNERS ONLINE</div>
+          <div className="mcp-status__item">8 SKILL DOMAINS</div>
+          <div className="mcp-status__item">ADAPTIVE PATHS: COMPUTING</div>
           <div className="mcp-status__ticker" aria-hidden="true">
-            INITIALIZING NEURAL PATHWAYS · SYNCHRONIZING GRID NODES · ESTABLISHING QUANTUM LINK ·
-            BYPASSING SECURITY PROTOCOLS · UPLOADING CONSCIOUSNESS MATRIX · CALIBRATING REALITY FILTERS ·
-            MCP-2099 FULLY OPERATIONAL · INITIATING PROTOCOL OMEGA · &nbsp;&nbsp;
-            INITIALIZING NEURAL PATHWAYS · SYNCHRONIZING GRID NODES · ESTABLISHING QUANTUM LINK ·
+            BAYESIAN KNOWLEDGE TRACING ACTIVE · COMPUTING pKNOWN FOR 24 LEARNERS · SKILL GRAPH SYNC COMPLETE ·
+            ADAPTIVE PATH ENGINE ONLINE · AI TUTOR RESPONDING · QUIZ CALIBRATION IN PROGRESS · MASTERY THRESHOLD: 0.85 ·
+            KNOWLEDGE NODES: 8 ACTIVE · PREREQUISITE CHAINS VALIDATED · ADAPT-2099 FULLY OPERATIONAL · &nbsp;&nbsp;
+            BAYESIAN KNOWLEDGE TRACING ACTIVE · COMPUTING pKNOWN FOR 24 LEARNERS · SKILL GRAPH SYNC COMPLETE ·
           </div>
         </footer>
       </div>
@@ -498,7 +510,7 @@ const CSS = `
     transition: color .05s, text-shadow .05s;
   }
   .mcp-title::after {
-    content: 'MCP-2099';
+    content: 'ADAPT·2099';
     position: absolute;
     inset: 0;
     color: var(--mcp-magenta);
