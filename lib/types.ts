@@ -37,9 +37,53 @@ export type AnalyticsState = {
   timeByTopic: { topic: string; minutes: number }[];
 };
 
+export type SkillGap = {
+  skillId: string;
+  skillName: string;
+  strugglingCount: number;
+  totalStudents: number;
+  percentage: number;
+  strugglingStudentIds: string[];
+};
+
+export type StudentProgress = {
+  id: string;
+  name: string;
+  overallProgress: number; // 0-100
+  lastActive: string; // "2 hrs ago", "1 day ago"
+  streak: number;
+  isAtRisk: boolean;
+  skillMastery: { skillId: string; mastery: number }[];
+};
+
+export type AtRiskStudent = {
+  id: string;
+  name: string;
+  reasons: string[]; // Multiple risk factors
+  overallProgress: number;
+  lastActive: string;
+  riskLevel: 'high' | 'medium' | 'low';
+};
+
 export type InstructorState = {
-  activeLearners: number;
-  atRisk: { id: string; name: string; reason: string }[];
+  // Class selector
+  currentClass: string;
+  availableClasses: { id: string; name: string }[];
+
+  // 4-card overview
+  totalStudents: number;
+  averageMastery: number;
+  activeToday: number;
+  atRiskCount: number;
+
+  // Skill gaps
+  skillGaps: SkillGap[];
+
+  // Students table
+  students: StudentProgress[];
+
+  // At-risk students (enhanced)
+  atRiskStudents: AtRiskStudent[];
 };
 
 export type SeedTopic = {
