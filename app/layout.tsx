@@ -31,20 +31,50 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://adapt2learn-two.vercel.app"),
   title: {
-    default: "Adapt2Learn - AI-Native Adaptive Learning Platform",
+    default: "Adapt2Learn - AI-Powered Adaptive Learning Platform | Visual Skill Graphs & Real-Time AI Tutoring",
     template: "%s | Adapt2Learn"
   },
-  description: "Transform static courses into living learning experiences. Visualize knowledge as an organic network with real-time AI tutoring and Bayesian Knowledge Tracing.",
-  keywords: ["adaptive learning", "AI tutor", "personalized education", "skill tracking", "Bayesian Knowledge Tracing", "learning platform"],
+  description: "Transform education with AI-native adaptive learning. Visual skill graphs, Bayesian knowledge tracking, real-time AI tutoring. 3x faster skill acquisition, 92% learner satisfaction. Perfect for K-12, higher education, and corporate training.",
+  keywords: [
+    "adaptive learning platform",
+    "AI tutor",
+    "personalized education",
+    "skill graph visualization",
+    "Bayesian Knowledge Tracing",
+    "learning analytics",
+    "corporate training",
+    "educational technology",
+    "real-time adaptation",
+    "knowledge mapping",
+    "instructional design",
+    "LMS alternative"
+  ],
   authors: [{ name: "Adapt2Learn Team" }],
   creator: "Adapt2Learn",
+  publisher: "Adapt2Learn",
+  category: "Education Technology",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://adapt2learn-two.vercel.app",
-    title: "Adapt2Learn - AI-Native Adaptive Learning Platform",
-    description: "Transform static courses into living learning experiences with real-time AI tutoring.",
+    title: "Adapt2Learn - AI-Powered Adaptive Learning Platform",
+    description: "Visualize knowledge as an organic network. Track mastery in real-time with AI tutoring. 3x faster learning, perfect for education and corporate training.",
     siteName: "Adapt2Learn",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Adapt2Learn - Visual Skill Graph Platform"
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Adapt2Learn - AI-Powered Adaptive Learning",
+    description: "Transform education with visual skill graphs and real-time AI tutoring",
+    images: ["/twitter-image.png"],
+    creator: "@adapt2learn"
   },
   robots: {
     index: true,
@@ -57,6 +87,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: "https://adapt2learn-two.vercel.app"
+  }
 };
 
 // Viewport configuration for responsive design
